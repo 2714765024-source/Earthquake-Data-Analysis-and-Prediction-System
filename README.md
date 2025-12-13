@@ -21,7 +21,7 @@ Her core capabilities directly relevant to this project encompass three key area
 3. **Cai Ziyi** : Holding a Bachelor's degree in Applied Statistics, possesses comprehensive technical expertise spanning the full data science pipeline—from data collection and processing to advanced analysis, predictive modeling, and technical documentation. She is proficient in utilizing programming tools such as Python and R for statistical modeling, machine learning implementation, and data visualization.
 Her research background in geographic and environmental systems provides direct relevance to earthquake analysis. This includes previous involvement in studies concerning the multi-party collaborative optimization of land management using evolutionary game theory, urban traffic flow prediction integrating random forests and exponential smoothing methods, and consumer behavior analysis through cluster analysis. These experiences demonstrate her ability to model complex multi-agent interactions within geographic contexts, apply advanced mathematical and computational modeling to spatial problems, and identify behavioral equilibria in intricate systems. In this earthquake analysis project, she is also responsible for developing the technical documentation, including the README file, and providing clear interpretation of the codebase.
 
-4. **Zhang Ruqian**
+4. **Zhang Ruqian** ：**1. Machine Learning Experience:** Conducted text sentiment analysis using machine learning models, including data preprocessing, feature extraction, and model training, to classify sentiment polarity in user-generated content. Developed stock trend prediction models by applying time-series analysis and regression algorithms, focusing on feature engineering and performance evaluation. **2. Data Visualization Skills:** Created weather data visualizations to present complex meteorological information through interactive charts and dashboards, enhancing data interpretability for diverse audiences. **3. Collaboration and Communication:** Demonstrates strong communication skills, with experience in clearly presenting technical findings and collaborating within cross-functional teams to align on project goals and deliverables.
 
 ## Data Collection
 We personally crawled the raw, unprocessed earthquake details data from the China Earthquake Networks Center.
@@ -479,15 +479,13 @@ Visualizer.plot_final_summary(
 ## Conclusion
 ### Summary of the Earthquake Analysis Project
 
-This comprehensive project aimed to analyze and predict earthquake occurrences using historical data, employing a suite of machine learning models. The dataset comprised records of earthquakes, detailing magnitude, depth, longitude, latitude, and timestamps. The project was structured into several key stages: exploratory data analysis (EDA), feature engineering, model training, evaluation, and clustering analysis.
+This project performed end-to-end analysis of earthquake data, including data cleaning, feature engineering, EDA, multi-model comparison (classification, regression), and spatial clustering.
 
-**Exploratory Data Analysis (EDA):** The initial phase involved visualizing the dataset to understand the distribution of earthquake magnitudes and depths, their spatial distribution, temporal patterns, and correlations between features. This phase revealed significant insights such as the concentration of earthquakes in specific regions and the diurnal patterns of occurrences.
+**Classification Model:** To predict "major earthquakes" (magnitude ≥4.5), Random Forest achieved the best performance (F1=0.678, AUC=0.649).
 
-**Feature Engineering:** A critical component, feature engineering, involved transforming raw data into informative features that could enhance predictive modeling. The project extracted temporal features (year, month, day, hour), spatial discretization features (longitude and latitude grids), lagged features (past event values), rolling statistics (mean, standard deviation, max, count over sliding windows), and derived physical quantities (magnitude-depth ratio, energy). These features aimed to capture various aspects of earthquake dynamics, including temporal trends, spatial clustering, and physical properties.
+**Regression Model:** To predict earthquake magnitude, Gradient Boosting performed best (R²=0.497, MAE≈0.5).
 
-**Model Evaluation:** The project evaluated multiple classification and regression models to predict earthquake occurrences and magnitudes. Classification models included Logistic Regression, Random Forest, SVM, and Gradient Boosting, among others. Regression models encompassed Linear Regression, Ridge, Lasso, and ElasticNet. The evaluation metrics focused on F1 scores, AUC scores for classification, and R², MAE scores for regression. The results indicated that Random Forest and XGBoost were particularly effective for classification tasks, while XGBoost led in regression performance.
-
-**Clustering Analysis:**  Spatial clustering was performed using DBSCAN and KMeans algorithms to identify regions with high earthquake activity. This analysis helped in understanding the geographical distribution of seismic events and identifying potential hotspots.
+**Clustering Model:** Spatial analysis (DBSCAN/KMeans) identified 5–8 seismic clusters, with KMeans (K=2) showing clearer spatial patterns.
 
 ---
 ### Core Findings
