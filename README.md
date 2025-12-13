@@ -26,7 +26,7 @@ Her research background in geographic and environmental systems provides direct 
 ## **Data Collection**
 We crawled data based on **Python** and **Selenium**, aiming to automatically collect detailed seismic data from the directory page designated by the **China Earthquake Networks Center Center**, and export the results to an Excel file. The code is written in a purely function based style, making it easy to read, modify, and extend.
 https://www.cenc.ac.cn/earthquake-manage-publish-web/designated-catalogue  
-**Collection time * *: June 3, 2023- December 9, 2025
+**Collection time**: June 3, 2023- December 9, 2025
 ### Features
 - Automatically opens the CENC designated catalogue page  
 - Detects and iterates through earthquake list items  
