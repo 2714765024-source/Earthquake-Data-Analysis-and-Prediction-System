@@ -547,32 +547,18 @@ This project performed end-to-end analysis of earthquake data, including data cl
 4. **Model Performance:** Random Forest and XGBoost emerged as top performers across both classification and regression tasks, demonstrating robustness in handling the complexity of earthquake data.
 ---
 ### Limitations of the Earthquake Analysis Project
+1. **Data Constraints:**
+   - The dataset size (1,308 records) is relatively small, limiting the generalization ability of complex models.
+   - Missing features (e.g., tectonic plate boundaries, historical seismic activity) reduce prediction accuracy.
 
-1. **Data Limitations:**
-   - **Historical Data Scope:** The analysis is based on historical data, which may not fully capture the complexity and variability of future earthquake occurrences. Earthquakes are influenced by numerous geological factors that might evolve over time.
-   - **Data Completeness:** The dataset might not include all relevant variables or might have missing values, which could affect the accuracy of the models.
+2. **Model Limitations:**
+   - The best R² (0.497) for magnitude prediction is low—earthquake magnitude is inherently stochastic, and current features cannot fully capture its variability.
+   - Classification models struggle with imbalanced data (few major earthquakes), leading to suboptimal recall.
 
-2. **Feature Engineering:**
-   - **Feature Selection Bias:** The chosen features might not encompass all possible influencing factors. There could be other significant variables not considered in the dataset that could improve model predictions.
-   - **Over-simplification:** Some features might oversimplify the complex geological processes leading to earthquakes, potentially ignoring nuanced interactions between variables.
-
-3. **Modeling Approach:**
-   - **Overfitting Risk:** With a large number of features, there is a risk that some models might overfit the training data, reducing their generalizability to new, unseen data.
-   - **Model Assumptions:** Many models make assumptions about data distribution (e.g., linear regression assumes a linear relationship). If these assumptions do not hold, model performance can be compromised.
-
-4. **Evaluation Metrics:**
-   - **Single Metric Focus:** Relying on a single metric (like F1 score or R²) might not provide a comprehensive evaluation of model performance. Different scenarios might require different metrics.
-   - **Cross-Validation Strategy:** The choice of cross-validation strategy (e.g., TimeSeriesSplit) can influence results. Other strategies might yield different insights into model stability and robustness.
-
-5. **Generalization Ability:**
-   - **Geographical Generalizability:** Models trained on data from one region might not generalize well to other regions with different geological characteristics.
-   - **Temporal Generalizability:** Earthquake patterns can change over time due to tectonic movements and other factors. Models might become less accurate as they age.
-6. **Interpretability and Usability:**
-   - **Model Interpretability:** Complex models like neural networks or ensemble methods might be difficult to interpret, which is crucial for stakeholders to understand and trust predictions.
-   - **Operational Constraints:** Deploying predictive models in real-world scenarios requires consideration of computational resources, data latency, and integration with existing systems.
-7. **Ethical and Social Implications:**
-   - **False Positive/Negatives:** The cost of false alarms or missed detections needs careful consideration, as it impacts public safety and resource allocation.
-   - **Dependence on Technology:** Over-reliance on technology might lead to complacency in traditional monitoring and preparedness measures.
+3. **Methodological Gaps:**
+   - Time-series splitting (TSCV) was used, but no external validation dataset was available to test real-world performance.
+   - Spatial clustering did not integrate geological context (e.g., fault lines), so cluster interpretation is purely data-driven.
+     
 ---
 ### Reflection on what the team learned
 1. Technical Skills Development
