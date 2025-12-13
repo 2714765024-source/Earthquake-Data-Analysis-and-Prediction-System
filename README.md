@@ -1,8 +1,8 @@
-# Earthquake Data Analysis and Prediction System
-## Project Overview
+# **Earthquake Data Analysis and Prediction System**
+## **Project Overview**
 This is a comprehensive earthquake data analysis and prediction system that integrates data processing, visualization, comparison of multiple machine learning models, and spatial clustering analysis. The system can process earthquake data, extract various features, and use multiple machine learning algorithms for classification, regression, and clustering analysis.
 
-## Motivation
+## **Motivation**
 ### Why did we choose earthquake data analysis as our topic?
 
 Our choice stems primarily from a natural scientific curiosity and its scientific significance: earthquakes, as an unsolved mystery, are among the deadliest natural disasters. In the 21st century alone, earthquakes have caused over 800,000 deaths. Earthquake prediction is considered the "holy grail" of Earth science. While we know we cannot "solve" this problem, systematically analyzing data and searching for patterns is itself a process of scientific exploration.
@@ -12,7 +12,7 @@ We can't help but ask: Are these earthquakes isolated or interconnected? Why do 
 
 Furthermore, the spatiotemporal "clustering patterns" of this narrative-rich data also intrigue us: Do earthquakes, like weather, have "active seasons" and "quiet seasons"? Are there predictable temporal patterns in seismic activity? For example, are earthquakes more likely to occur at certain times of day or in certain months of the year? The data itself tells a complex story about Earth's dynamics.
 
-## Team Background 
+## **Team Background** 
 1. **Zeng xinwei**
 
 2. **Li Aiwen** : Holding a Bachelor's degree in Applied Statistics, possesses a solid theoretical foundation in mathematical statistics and machine learning. With extensive experience in data analysis projects, she is proficient in the entire data science workflow from data cleaning and preprocessing to model building and visualization. In this earthquake analysis project, her responsibilities include the cleaning, conversion, and quality verification of seismic data, constructing temporal and spatial features and completing feature engineering, designing and implementing multiple classification and regression models while conducting performance comparisons and evaluations, as well as developing visual charts and producing data and model visualization outputs.
@@ -23,13 +23,67 @@ Her research background in geographic and environmental systems provides direct 
 
 4. **Zhang Ruqian** ：**1. Machine Learning Experience:** Conducted text sentiment analysis using machine learning models, including data preprocessing, feature extraction, and model training, to classify sentiment polarity in user-generated content. Developed stock trend prediction models by applying time-series analysis and regression algorithms, focusing on feature engineering and performance evaluation. **2. Data Visualization Skills:** Created weather data visualizations to present complex meteorological information through interactive charts and dashboards, enhancing data interpretability for diverse audiences. **3. Collaboration and Communication:** Demonstrates strong communication skills, with experience in clearly presenting technical findings and collaborating within cross-functional teams to align on project goals and deliverables.
 
-## Data Collection
-We personally crawled the raw, unprocessed earthquake details data from the China Earthquake Networks Center.
-https://www.cenc.ac.cn/earthquake-manage-publish-web/designated-catalogue
+## **Data Collection**
+We crawled data based on **Python** and **Selenium**, aiming to automatically collect detailed seismic data from the directory page designated by the **China Earthquake Networks Center Center**, and export the results to an Excel file. The code is written in a purely function based style, making it easy to read, modify, and extend.
+https://www.cenc.ac.cn/earthquake-manage-publish-web/designated-catalogue  
+**Collection time * *: June 3, 2023- December 9, 2025
+### Features
+- Automatically opens the CENC designated catalogue page  
+- Detects and iterates through earthquake list items  
+- Clicks into each earthquake detail page  
+- Extracts the following data:
+  - List item text (earthquake title)
+  - Occurrence time
+  - Latitude and longitude
+  - Focal depth
+  - Magnitude
+- Supports limiting the number of records  
+- Exports data to Excel (`.xlsx`)
+  
+### Data Fields
+The exported Excel file contains the following columns:
 
-### Data Review
+| Field | Description |
+|------|-------------|
+| 序号 | Record index |
+| 列表项文本 | Earthquake title from list page |
+| 时间 | Occurrence time |
+| 经纬度 | Latitude and longitude |
+| 震源深度 | Focal depth |
+| 级数 | Magnitude |
 
-## Core Functions
+### Requirements
+- Python 3.8+(we use 3.11.11)
+- Google Chrome
+- ChromeDriver (must match Chrome version)
+
+### Installation
+```bash
+pip install selenium pandas openpyxl
+```
+
+### Usage
+1. Make sure ChromeDriver is installed and added to PATH  
+2. Run the script:
+```bash
+python main.py
+```
+3. Enter the number of earthquake records to crawl (default: 5)  
+4. Choose whether to export the data to Excel  
+5. The Excel file will be saved to the Desktop
+
+### Notes
+- This project uses Selenium and opens a real browser window  
+- Changes in page structure may break XPath or selectors  
+- Please use responsibly and avoid excessive requests  
+
+
+### Disclaimer
+This project is intended **for educational and research purposes only**.  
+Do not use it for commercial purposes or in violation of the target website’s terms of service.
+
+---
+## **Core Functions**
 1. Data Processing Module (DataProcessor):  
 - Data cleaning and preprocessing  
 - Geographic coordinate resolution (latitude and longitude conversion)   
@@ -72,7 +126,6 @@ Please name your earthquake data as
 python
 df = pd.read_excel('your file path/earthquake data.xlsx', engine='openpyxl')
 ```
-
 
 ## **Core Operations / Usage Examples**
 ## **1. Feature Engineering**
@@ -206,7 +259,7 @@ To assess the predictive performance across different algorithmic families, the 
 |10 | Naive Bayes | Probabilistic classifier |
 |11 | MLP | Neural network classifier |
 |12 | Gaussian NB | Gaussian Naive Bayes classifier |
----
+
 ### Regression Models (12)
 
 | No. | Model Name | Description |
@@ -223,7 +276,7 @@ To assess the predictive performance across different algorithmic families, the 
 |10 | LightGBM Regressor | High-performance boosting regressor |
 |11 | Gradient Boosting Regressor | Classical boosting regressor |
 |12 | MLP Regressor | Neural network regressor |
----
+
 
 ### Clustering Models (2)
 
@@ -231,8 +284,8 @@ To assess the predictive performance across different algorithmic families, the 
 |-----|------------|-------------|
 | 1 | KMeans | Partition-based clustering (k clusters) |
 | 2 | DBSCAN | Density-based clustering algorithm |
----
 
+---
 ### **Comparison Metrics**
 ### Classification Metrics (8)  
 **Primary Metrics: F1 Score, AUC-ROC**
@@ -248,8 +301,6 @@ To assess the predictive performance across different algorithmic families, the 
 | 7 | Classification Report | `classification_report` | Precision, recall, F1 for each class |
 | 8 | Weighted F1 / Macro F1 | `f1_score(..., average=...)` | Supports imbalanced datasets |
 
----
-
 ### Regression Metrics (5)
 **Primary Metrics: R² Score, MAE**
 
@@ -261,8 +312,6 @@ To assess the predictive performance across different algorithmic families, the 
 | 4 | R² Score | `r2_score` | Variance explained by the model |
 | 5 | MAPE (optional) | custom | Mean Absolute Percentage Error |
 
----
-
 ### Clustering Metrics (3)
 **Primary Metrics: Silhouette Score, Davies–Bouldin Index (DBI)**
 
@@ -271,7 +320,8 @@ To assess the predictive performance across different algorithmic families, the 
 | 1 | Silhouette Score | `silhouette_score` | Measures cluster separation (higher is better) |
 | 2 | Davies–Bouldin Index | `davies_bouldin_score` | Measures cluster similarity (lower is better) |
 | 3 | Calinski–Harabasz Index | custom | Measures cluster dispersion (higher is better) |
- 
+
+---
 ## **3.Hyperparameter Tuning**
 This project applies a unified and systematic hyperparameter tuning strategy across all classification, regression, and clustering models. The goal is to ensure fairness, stability, and optimal performance for each model family.
 
@@ -283,7 +333,6 @@ Two search strategies are used depending on model complexity:
 
 All tuning procedures use **5-fold cross-validation** to avoid overfitting and ensure stable model comparison.
 
----
 
 ### 2. Evaluation Metrics for Tuning
 Different tasks use different primary metrics:
@@ -352,6 +401,8 @@ for k in [2, 3, 4, 5, 6]:
         best_score = score
         best_k = k
 ```
+
+---
 ## **Visualization**
 The project includes a comprehensive visualization system designed to analyze the earthquake dataset, evaluate machine-learning models, and visualize clustering structures.
 All plots are implemented in Matplotlib and Seaborn, and organized into four major components:
@@ -374,7 +425,7 @@ All plots are implemented in Matplotlib and Seaborn, and organized into four maj
 | Magnitude Class Distribution | Counts events in custom magnitude categories |
 | Correlation Heatmap | Shows correlations between numerical features |
 | Summary Statistics Panel | Displays key descriptive statistics |
----
+
 **Example**
 ```
 python
@@ -394,7 +445,7 @@ The classification module compares 12 machine-learning classifiers using F1-Scor
 | AUC Ranking | Ranks classification models using AUC scores |
 | Feature Importance | Shows most influential predictors (tree-based models) |
 | F1 vs AUC Scatter Plot | Two-metric comparison of classifier performance |
----
+
 **Example**
 ```
 python
@@ -417,7 +468,7 @@ The regression module compares 12 regression models using R² and MAE
 | MAE Ranking | Ranks regressors by Mean Absolute Error |
 | Feature Importance | Highlights key predictors for tree-based regressors |
 | R² vs MAE Scatter Plot | Compares models on accuracy vs error trade-offs |
----
+
 **Example**
 ```
 python
@@ -439,7 +490,7 @@ This module evaluates both KMeans and DBSCAN, and visualizes spatial clustering 
 | Silhouette Score Curve | Validates cluster structure quality |
 | DBSCAN Cluster Map | Shows density-based clustering and noise points |
 | KMeans Cluster Map | Visualizes spatial clusters and centroids |
----
+
 **Example**
 ```
 python
@@ -452,7 +503,6 @@ Visualizer.plot_kmeans_metrics(k_values, inertia_list, silhouette_list)
 Visualizer.plot_clustering_results(df, labels_kmeans, labels_dbscan)
 
 ```
-
 ### 5.Final Summary Dashboard
 At the end of the pipeline, a multi-panel summary figure is generated:
 
@@ -463,7 +513,7 @@ At the end of the pipeline, a multi-panel summary figure is generated:
 | Regression Summary Panel | Displays best regression models |
 | Clustering Summary Panel | Shows quality metrics of clustering algorithms |
 | Text Summary Box | Final dataset + method summary printed directly in the figure |
----
+
 **Example**
 ```
 python
@@ -476,7 +526,9 @@ Visualizer.plot_final_summary(
     clustering_metrics
 )
 ```
-## Conclusion
+
+---
+## **Conclusion**
 ### Summary of the Earthquake Analysis Project
 
 This project performed end-to-end analysis of earthquake data, including data cleaning, feature engineering, EDA, multi-model comparison (classification, regression), and spatial clustering.
