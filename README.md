@@ -7,7 +7,7 @@ This is a comprehensive earthquake data analysis and prediction system that inte
 
 Our choice stems primarily from a natural scientific curiosity and its scientific significance: earthquakes, as an unsolved mystery, are among the deadliest natural disasters. In the 21st century alone, earthquakes have caused over 800,000 deaths. Earthquake prediction is considered the "holy grail" of Earth science. While we know we cannot "solve" this problem, systematically analyzing data and searching for patterns is itself a process of scientific exploration.
 
-### What real problem or question does your project attempt to solve?
+### What real problem or question does our project attempt to solve?
 We can't help but ask: Are these earthquakes isolated or interconnected? Why do large earthquakes seem to "cluster" together? Are there global earthquake triggering mechanisms that we don't yet understand? Do these regions correspond to the approximate directions of known seismic zones? Can we use algorithms to automatically identify them?
 
 Furthermore, the spatiotemporal "clustering patterns" of this narrative-rich data also intrigue us: Do earthquakes, like weather, have "active seasons" and "quiet seasons"? Are there predictable temporal patterns in seismic activity? For example, are earthquakes more likely to occur at certain times of day or in certain months of the year? The data itself tells a complex story about Earth's dynamics.
