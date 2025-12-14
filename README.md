@@ -31,6 +31,19 @@ Her research background in geographic and environmental systems provides direct 
 
 - Moreover, our prior involvement in geographically-informed research—such as land management optimization and urban systems prediction—provided direct conceptual relevance, allowing us to approach seismic patterns not merely as abstract data points but as manifestations of complex environmental processes. This domain awareness, coupled with our technical capabilities, enabled us to select a topic that is both methodologically challenging and societally impactful, ensuring that our work contributes meaningfully to the important field of seismic risk assessment while fully utilizing the diverse skill set our team possesses
 
+### Roles and Responsibilities of the Team
+- Topic choosing: All Members
+- Data Scraping: XinweiZENG
+- Data Processing: XinweiZENG, AiwenLI
+- Model Construction: AiwenLI
+- Data Analysis: AiwenLI, XinweiZENG
+- Data Visualization: AiwenLI
+- Readme File Making: ZiyiCAI
+- PPT Making: RuqianZHANG, ZiyiCAI
+- Presentation Making: RuqianZHANG
+
+
+
 ## **Data Collection**
 We crawled data based on **Python** and **Selenium**, aiming to automatically collect detailed seismic data from the directory page designated by the **China Earthquake Networks Center Center**, and export the results to an Excel file. The code is written in a purely function based style, making it easy to read, modify, and extend.
 https://www.cenc.ac.cn/earthquake-manage-publish-web/designated-catalogue  
