@@ -12,6 +12,17 @@ We can't help but ask: Are these earthquakes isolated or interconnected? Why do 
 
 Furthermore, the spatiotemporal "clustering patterns" of this narrative-rich data also intrigue us: Do earthquakes, like weather, have "active seasons" and "quiet seasons"? Are there predictable temporal patterns in seismic activity? For example, are earthquakes more likely to occur at certain times of day or in certain months of the year? The data itself tells a complex story about Earth's dynamics.
 
+## Roles and Responsibilities of the Team
+- Topic choosing: All Members
+- Data Scraping: XinweiZENG
+- Data Processing: XinweiZENG, AiwenLI
+- Model Construction: AiwenLI
+- Data Analysis: AiwenLI, XinweiZENG
+- Data Visualization: AiwenLI
+- Readme File Making: ZiyiCAI
+- PPT Making: RuqianZHANG, ZiyiCAI
+- Presentation Making: RuqianZHANG
+
 ## **Team Background** 
 1. **Zeng xinwei:** Bachelor’s in Data Science and Big Data Technology, with solid foundations in Data Structures, Distributed Computing, and basic Machine Learning. Experienced in end-to-end data processing, proficient in data collection, cleaning, preprocessing, and basic visualization. In this project, she led data collection by independently developing multi-platform web scraping scripts. Conducted raw data verification/cleaning, collaborated in data warehousing and standardization, providing high-quality data for feature engineering and model training.
 Her core competencies include data acquisition and scraping, where she is proficient in Python libraries such as Requests, Scrapy, and Selenium, having collected millions of data entries while solving anti-scraping measures and handling data heterogeneity across structured, unstructured, and dynamically loaded sources. In data preprocessing and warehousing, she is skilled in Pandas, NumPy, and database technologies including MySQL and MongoDB, effectively handling data deduplication, missing value imputation, and ensuring efficient storage with standardized data flow. She also possesses basic visualization capabilities using Matplotlib and ECharts, creating informative charts to present data quality assessments and distribution analyses that support team decision-making processes.
@@ -30,19 +41,6 @@ Her research background in geographic and environmental systems provides direct 
 - We were particularly drawn to earthquake analysis because it represents a quintessential data science challenge that demands our combined strengths: the need for robust data acquisition and preprocessing aligns with our data engineering expertise; the requirement for sophisticated temporal and spatial feature engineering matches our statistical and geographic modeling experience; and the necessity to evaluate diverse machine learning models corresponds with our proficiency in comparative algorithm analysis.
 
 - Moreover, our prior involvement in geographically-informed research—such as land management optimization and urban systems prediction—provided direct conceptual relevance, allowing us to approach seismic patterns not merely as abstract data points but as manifestations of complex environmental processes. This domain awareness, coupled with our technical capabilities, enabled us to select a topic that is both methodologically challenging and societally impactful, ensuring that our work contributes meaningfully to the important field of seismic risk assessment while fully utilizing the diverse skill set our team possesses
-
-### Roles and Responsibilities of the Team
-- Topic choosing: All Members
-- Data Scraping: XinweiZENG
-- Data Processing: XinweiZENG, AiwenLI
-- Model Construction: AiwenLI
-- Data Analysis: AiwenLI, XinweiZENG
-- Data Visualization: AiwenLI
-- Readme File Making: ZiyiCAI
-- PPT Making: RuqianZHANG, ZiyiCAI
-- Presentation Making: RuqianZHANG
-
-
 
 ## **Data Collection**
 We crawled data based on **Python** and **Selenium**, aiming to automatically collect detailed seismic data from the directory page designated by the **China Earthquake Networks Center Center**, and export the results to an Excel file. The code is written in a purely function based style, making it easy to read, modify, and extend.
